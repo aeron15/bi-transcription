@@ -1,0 +1,59 @@
+%Program that maps fcs files into a map of a 96 well plate
+
+function Files=map_fcs_files(path,typeplate)
+
+switch typeplate
+    
+    case 96
+        
+        load('map_plate_96');
+
+    case 384
+        
+        load('map_plate_384')
+        
+    otherwise
+    
+        display('Invalid value for number of wells')
+        
+end
+
+
+%Extract all fcs files in the path
+
+fcs_files_in_path=strcat(path,'*.fcs');
+
+%Files=dir(fcs_files_in_path);
+
+FCS_files=dir(fcs_files_in_path);
+
+%Loop through all the files
+
+
+for i=1:numel(FCS_files)
+    
+    file_name=(FCS_files(i).name);
+    
+    
+   
+    [data,param,header]=read_headfcs(FCS_files(i).name);
+    
+    
+     for i=1:8
+        for j=1:12
+            
+            %display(Well(i,j))
+        
+            if  strcmp(header(strcmp(header,'WELL ID'),2),Well(i,j))
+                
+                Files.(header{strcmp(header,'WELL ID'),2})=file_name;
+            
+            end
+        
+        end
+    
+    end
+    
+end
+
+end

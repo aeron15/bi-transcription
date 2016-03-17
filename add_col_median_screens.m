@@ -1,0 +1,7 @@
+median_fluorescence_2767=addcolmike(median_fluorescence_2767);
+median_fluorescence_2768=addcolmike(median_fluorescence_2768);
+median_fluorescence_2769=addcolmike(median_fluorescence_2769);
+median_fluorescence_2767_0311=addcolmike(median_fluorescence_2767_0311);
+median_fluorescence_2767_20111103=addcolmike(median_fluorescence_2767_20111103);
+median_fluorescence_2767_resc2Ade=addcolmike(median_fluorescence_2767_resc2Ade);
+median_fluorescence_2767_rescreen_2=addcolmike(median_fluorescence_2767_rescreen_2);
